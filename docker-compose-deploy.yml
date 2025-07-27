@@ -1,0 +1,22 @@
+# version: '3.8'
+
+services:
+  backend:
+    image: ${BACKEND_IMAGE}          # e.g., spaceapi-backend:v1.0.1
+    container_name: spaceapi-backend          
+    ports:
+      - "8000:8000"
+    volumes:
+      - spaceapi-data:/data
+      - ./backend/docs:/export-docs
+    restart: unless-stopped
+
+  frontend:
+    image: ${FRONTEND_IMAGE}         # e.g., spaceapi-frontend:v1.0.1
+    container_name: spaceapi-frontend         
+    ports:
+      - "5173:80"
+    restart: unless-stopped
+
+volumes:
+  spaceapi-data:

@@ -1,0 +1,30 @@
+SpaceAPI starting the servers
+
+Prerequisites:
+- installed uvicorn module in .venv virtual environment folder
+- installed node.js service from MSI installation (additional tools like chocolatey are not necessary)
+- added a path to node/bin in Windows environment variable services
+
+Start backend service:
+
+1. Change directory from root to 'backend'
+2. Open a Terminal window and execute: `uvicorn src.space.main:app --reload`
+3. In web browser navigate to: http://127.0.0.1:8000/docs
+
+Start frontend service:
+
+1. Change directory to 'frontend'
+2. Open a new Terminal window, while the other one is still running the backend service
+3. In the Terminal execute: `npm install`
+4. If error, then first install 'node.js' and 
+5. Add an environment variable in Windows settings, path to bin
+6. Reload Windows in Command Palette
+7. Run again 'npm install', if successful
+8. Then run 'npm run dev'
+9. In web browser navigate to: http://localhost:5173/
+
+
+OR,
+
+in the CMD Terminal simply run: docker compose up -d
+and it will automate the whole container installation and server initiation process

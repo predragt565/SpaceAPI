@@ -1,0 +1,39 @@
+# === Stage 1: Build wheels ===
+FROM python:3.12-slim AS builder
+WORKDIR /app
+
+COPY pyproject.toml requirements.txt ./
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir wheels -r requirements.txt
+
+COPY src src
+COPY data data
+COPY utilities utilities
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir wheels .
+
+# === Stage 2: Runtime ===
+FROM python:3.12-slim AS runner
+WORKDIR /app
+
+# Install built wheels
+COPY --from=builder /app/wheels /wheels
+RUN pip install --no-cache /wheels/* && rm -rf /wheels
+
+# Copy source code and data (into image context)
+COPY src src
+COPY utilities utilities 
+COPY data/planets.json /app/data/planets.json
+
+# Copy /docs folder with documents into image
+COPY docs /app/docs
+
+# Copy init script to copy planets.json into volume
+COPY init_data.sh /init_data.sh
+RUN chmod +x /init_data.sh
+
+# Expose backend port
+EXPOSE 8000
+
+# Run init script before starting uvicorn
+ENTRYPOINT ["/init_data.sh"]
+ENV PYTHONPATH=/app
+CMD ["uvicorn", "src.space.main:app", "--host", "0.0.0.0", "--port", "8000"]

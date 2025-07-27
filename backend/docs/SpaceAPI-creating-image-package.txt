@@ -1,0 +1,74 @@
+Space API creating the App's Docker image package
+
+To create the App's project Docker image, in the CMD terminal run: .\publish.cmd
+This script does all of this:
+-    Syncs planets.json from the VOlume back to the Backend container
+-    Rebuilds both backend and frontend images
+-    Tags both images for Docker Hub
+-    Pushes both images to Docker Hub
+
+Based on the App's structure:
+## 📁 Project Structure
+
+```
+📁SpaceAPI
+    └── 📁 backend/
+        ├── 📁 data/
+        │   └── planets.json
+        │
+        ├── 📁 docs/
+        │   ├── SpaceAPI-creating-image-package.txt
+        │   └── SpaceAPI-starting-the-servers-txt
+        │
+        ├── 📁 src/
+        │   └── 📁 space/
+        │       └── main.py
+        │
+        ├── 📁 utilities/
+        │   └── data_load_func.py
+        │
+        ├── dockerfile
+        ├── init_data.sh
+        └── pyproject.toml
+
+
+    ├── 📁 frontend/
+        ├── 📁 src/
+        │   ├── 📁 assets/
+        │   │   └── react.svg
+        │   │
+        │   ├── 📁 components/
+        │   │   ├── AddPlanetForm.jsx
+        │   │   ├── EditPlanetForm.jsx
+        │   │   ├── PlanetCard.jsx
+        │   │   └── PlanetList.jsx
+        │   │
+        │   ├── App.jsx
+        │   ├── App.css
+        │   ├── index.css
+        │   └── main.jsx
+        │
+        ├── dockerfile
+        └── index.html
+    │
+    ├── docker-compose.yml
+    ├── docker-compose-deploy.yml
+    ├── readme.md
+    ├── requirements.txt
+    └── sync-data-from-volume.cmd
+```
+
+(a) 'docker-compose.yml' file contains procedure for multi-stage image building.
+(b) 'dockerfile'(s) contain steps for creating image layers when building an image (frontend, backend and volume)
+(c) 'init_data.sh' contains script for ensuring the Docker volume has an initial planets.json file, 
+    if not, then it copies it from the image. This prevents overwriting an existing plantes.json file in the volume
+(d) 'sync-data-from-volume.cmd' ensures that the updated version of planets.json file is copied from the volume (mounted at /data/planets.json)
+    back to the local backend folder  (.backend/data/planets.json) before building a new image
+
+The ideal workflow becomes:
+- docker compose up             # run the app and make edits via UI
+- ./sync-data-from-volume.cmd   # extract changes back into backend/data
+- docker compose build backend  # include new json in image
+- docker push ...               # publish new version
+
+This workflow is now fully automated through 'publish.cmd' script located in the project's root folder.

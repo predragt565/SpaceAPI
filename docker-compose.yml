@@ -1,0 +1,29 @@
+services:
+  backend:
+    image: spaceapi-backend
+    pull_policy: never
+    container_name: spaceapi-backend
+    build:
+      context: ./backend
+      dockerfile: dockerfile
+      target: runner
+    ports:
+      - 8000:8000
+    volumes:
+      - spaceapi-data:/data                    # persist JSON to volume
+      - ./backend/docs:/export-docs            # map host docs to /export-docs
+      
+
+  frontend:
+    image: spaceapi-frontend
+    pull_policy: never
+    container_name: spaceapi-frontend
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    ports:
+      - 5173:80
+  
+  
+volumes:
+  spaceapi-data:

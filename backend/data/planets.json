@@ -1,0 +1,160 @@
+[
+  {
+    "id": 1,
+    "name": "Mercury",
+    "diameter_km": 4879,
+    "distance_from_sun_km": 57900000,
+    "mass_earths": 0.055,
+    "orbital_period_days": 88,
+    "moons": 0,
+    "facts": [
+      "Mercury has the largest temperature differences between day and night in our solar system \u2014 over 500\u00b0C.",
+      "Mercury is slowly shrinking because its large iron core is contracting."
+    ],
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Venus",
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/PIA23791-Venus-RealAndEnhancedContrastViews-20200608_%28cropped%29.jpg",
+    "facts": [
+      "Venus is the hottest planet due to its thick carbon dioxide atmosphere \u2014 temperatures reach up to 460\u00b0C."
+    ],
+    "diameter_km": 12104,
+    "distance_from_sun_km": 108200000,
+    "mass_earths": 0.815,
+    "orbital_period_days": 225,
+    "orbital_period_years": null,
+    "moons": null
+  },
+  {
+    "id": 3,
+    "name": "Earth",
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/The_Blue_Marble_%28remastered%29.jpg",
+    "facts": [
+      "Earth is the only known planet with life."
+    ],
+    "diameter_km": 12756,
+    "distance_from_sun_km": 149600000,
+    "mass_earths": 1.0,
+    "orbital_period_days": 365,
+    "orbital_period_years": null,
+    "moons": 1
+  },
+  {
+    "id": 4,
+    "name": "Mars",
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg",
+    "facts": [
+      "Mars hosts the tallest mountain in the solar system, Olympus Mons (27 km high)."
+    ],
+    "diameter_km": 6794,
+    "distance_from_sun_km": 227900000,
+    "mass_earths": 0.107,
+    "orbital_period_days": 687,
+    "orbital_period_years": null,
+    "moons": 2
+  },
+  {
+    "id": 5,
+    "name": "Jupiter",
+    "diameter_km": 142984,
+    "distance_from_sun_km": 779000000,
+    "mass_earths": 317.8,
+    "orbital_period_years": 11.9,
+    "moons": 63,
+    "facts": [
+      "Jupiter is the largest planet and has the shortest days \u2014 only 9.8 hours.",
+      "Its Great Red Spot is a massive storm that's been raging for over 340 years.",
+      "It likely has the most moons, including Ganymede \u2014 the largest moon in the solar system."
+    ],
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Jupiter_OPAL_2024_%28cropped%29.png"
+  },
+  {
+    "id": 6,
+    "name": "Saturn",
+    "diameter_km": 120536,
+    "distance_from_sun_km": 1433000000,
+    "mass_earths": 95.2,
+    "orbital_period_years": 29.5,
+    "moons": 61,
+    "facts": [
+      "Saturn has the most iconic ring system in the solar system.",
+      "Its moons are made largely of ice, and it experiences lightning a million times more powerful than Earth's."
+    ],
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Saturn_from_Cassini_Orbiter_%282004-10-06%29.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Uranus",
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Uranus_Voyager2_color_calibrated.png",
+    "facts": [
+      "Uranus has the most extreme seasons \u2014 the north pole points directly at the Sun during its summer."
+    ],
+    "diameter_km": 51118,
+    "distance_from_sun_km": 2871000000,
+    "mass_earths": 14.5,
+    "orbital_period_days": null,
+    "orbital_period_years": 83.8,
+    "moons": 27
+  },
+  {
+    "id": 8,
+    "name": "Neptune",
+    "diameter_km": 49528,
+    "distance_from_sun_km": 4495000000,
+    "mass_earths": 17.1,
+    "orbital_period_years": 163.8,
+    "moons": 13,
+    "facts": [
+      "Neptune is the farthest planet from the Sun.",
+      "It has the strongest winds in the solar system \u2014 over 2000 km/h.",
+      "Triton, one of its moons, has ice volcanoes that erupt nitrogen at -220\u00b0C."
+    ],
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Neptune_Voyager2_color_calibrated%2C_brightened.png"
+  },
+  {
+    "id": 9,
+    "name": "Pluto",
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Pluto-01_Stern_03_Pluto_Color_TXT.jpg/960px-Pluto-01_Stern_03_Pluto_Color_TXT.jpg",
+    "facts": [
+      "Pluto (minor-planet designation: 134340 Pluto) is a dwarf planet in the Kuiper belt, a ring of bodies beyond the orbit of Neptune.",
+      "Originally considered a planet, its classification was changed when astronomers adopted a new definition of planet. "
+    ],
+    "diameter_km": 2376,
+    "distance_from_sun_km": 4500000000,
+    "mass_earths": 0.00218,
+    "orbital_period_days": 0,
+    "orbital_period_years": 247.0,
+    "moons": 5
+  },
+  {
+    "id": 10,
+    "name": "Earth's Moon",
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
+    "facts": [
+      "The Moon is Earth's only natural satellite. In geophysical terms, the Moon is a planetary-mass object or satellite planet.",
+      "It orbits around Earth at an average distance of 384399 km. The Moon is tidally locked to Earth, always facing it with the same side."
+    ],
+    "diameter_km": 3474,
+    "distance_from_sun_km": 149200000,
+    "mass_earths": 0.012,
+    "orbital_period_days": 29,
+    "orbital_period_years": null,
+    "moons": 0
+  },
+  {
+    "id": 11,
+    "name": "Carina Nebula",
+    "img_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Hs-2009-25-e-full.jpg",
+    "facts": [
+      "Nebulae are often star-forming regions, such as in the Pillars of Creation in the Eagle Nebula. In these regions, the formations of gas, dust, and other materials \"clump\" together to form denser regions, which attract further matter and eventually become dense enough to form stars."
+    ],
+    "diameter_km": 260000000,
+    "distance_from_sun_km": 4000000000,
+    "mass_earths": null,
+    "orbital_period_days": null,
+    "orbital_period_years": null,
+    "moons": null
+  }
+]
